@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cars Bank</title>
+
+	<link rel='shortcut icon' th:href="@{icons/favicon.ico}">
+	<link rel="stylesheet" th:href="@{css/style.css}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand" href="#">CARS BANK</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">HOME</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">ABOUT US</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">SERVICES</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">GALLERY</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">CONTACT</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<header class="header">
+		<div class="container">
+			<div class="header-text">
+				<h1>Sed malesuada tristique diam eget auctor</h1>
+				<p>Etiam tempor rutrum dolor condimentum quis sem imperdiet luctus Lorem ipsum dolor sit amet</p>
+			</div>
+		</div>
+	</header>
+
+	<section class="about-us">
+		<div class="container">
+			<h2 class="section-title">About Us</h2>
+			<div class="row">
+				<div class="col-lg-6 about-us-text">
+					<p>
+						Duis turpis arcu, dictum eu tincidunt id, congue vel urna. Quisque posuere, ipsum eu faucibus
+						cursus, ex tortor elementum leo, eget varius lorem quam a nisl. Mauris ut enim sed tortor auctor
+						luctus at vitae est. Duis dignissim auctor rhoncus. <br> <br>
+						<i>Curabitur diam lorem, ultricies eu pellentesque sed, elementum sodales urna. Pellentesque
+							molestie maximus nisl at ultrices.</i>
+
+					</p>
+					<ul class="about-us-list">
+						<li>Marketing</li>
+						<li>Professional Approach</li>
+						<li>Production</li>
+						<li>Effective Solutions</li>
+					</ul>
+				</div>
+				<div class="col-lg-6 about-us-video">
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/mJDKEhck22U" frameborder="0"
+						allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="gallery-section">
+		<div class="container">
+			<h2 class="section-title">Our Gallery</h2>
+			<div class="gallery-grid">
+				<img class="gallery-image" th:each="car:${cars}" th:src="@{${car.img}}" alt="car">
+			</div>
+		</div>
+	</section>
+
+
+	<section class="our-clients">
+		<div class="container">
+			<h2 class="section-title text-center mb-4">Our Clients</h2>
+
+			<div class="d-flex justify-content-center flex-wrap">
+
+				<div class="client-card" th:each="client:${clients}">
+					<img th:src="@{${client.img}}" alt="person" class="client-photo">
+					<h4 th:text="${client.firstName + ' ' + client.lastName}"></h4>
+					<p th:text="${client.comment}"></p>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer bg-dark text-light">
+		<div class="container">
+			<div class="text-center">
+				<p class="footer-text">&copy; 2023 Your Website. All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- jQuery and Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
