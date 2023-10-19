@@ -99,6 +99,7 @@
 				<div class="client-card" th:each="client:${clients}">
 					<img th:src="@{${client.img}}" alt="person" class="client-photo">
 					<h4 th:text="${client.firstName + ' ' + client.lastName}"></h4>
+					<p th:text="${client.phone}"></p>
 					<p th:text="${client.comment}"></p>
 				</div>
 
